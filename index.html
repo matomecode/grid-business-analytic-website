@@ -2,81 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GRID - Business Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grid Business Analytics</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRID</div>
+    <div class="logo">Grid</div>
     <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
+      <ul>
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#why">Why Grid</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a class="sign-in" href="#">Sign In</a>
     </nav>
+    <a href="#get-started" class="btn primary">Get Started</a>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Insights for<br><span>Data-Driven Decisions</span></h1>
-      <p>Powerful analytics tools to help you visualize and understand your data.</p>
-      <div class="hero-buttons">
-        <a href="#services" class="btn primary">Get Started</a>
-        <a href="#about" class="btn secondary">Learn More</a>
-      </div>
-    </div>
-    <div class="dashboard-preview animate">
-      <img src="https://dummyimage.com/500x300/141432/ffffff&text=Dashboard+Mockup" alt="Dashboard mockup">
-    </div>
+  <section class="hero">
+    <h1 class="fade-in">Smarter Data, Smarter Decisions</h1>
+    <p class="fade-in-delay">Empowering your business with cutting-edge analytics and data-driven strategy.</p>
+    <a href="#services" class="btn primary fade-in-delay-2">Explore Services</a>
   </section>
 
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <p class="subhead">Empowering your business with advanced data analytics solutions.</p>
+  <section id="services" class="grid-section">
+    <h2 class="section-title slide-up">What We Offer</h2>
     <div class="card-grid">
-      <div class="card animate">
-        <h3>📊 Data Analysis</h3>
-        <p>Comprehensive insight from your data to drive strategic outcomes.</p>
+      <div class="card zoom-in">
+        <h3>Data Strategy</h3>
+        <p>Custom data strategies to streamline decision making and operations.</p>
       </div>
-      <div class="card animate">
-        <h3>📈 Reporting</h3>
-        <p>Customizable reports to communicate key metrics clearly.</p>
+      <div class="card zoom-in delay-1">
+        <h3>BI Dashboards</h3>
+        <p>Real-time dashboards built with Power BI, Tableau, or Looker.</p>
       </div>
-      <div class="card animate">
-        <h3>📉 Visualization</h3>
-        <p>Interactive charts and graphs to explore your data visually.</p>
+      <div class="card zoom-in delay-2">
+        <h3>Internal Audit</h3>
+        <p>Automated risk assessments and control testing tools for audit teams.</p>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <h2>Why GRID?</h2>
-    <p>GRID blends powerful technology with simple UX to help businesses unlock insights from data quickly.</p>
-    <ul>
-      <li>⚡ Lightning-fast dashboards</li>
-      <li>🎯 AI-powered forecasting</li>
-      <li>🔐 Enterprise-grade security</li>
-    </ul>
+  <section id="why" class="why-section">
+    <h2 class="section-title">Why Choose Grid?</h2>
+    <div class="features">
+      <div class="feature slide-up">
+        <h4>Fast Implementation</h4>
+        <p>We deploy in days, not months — no disruptions to your work.</p>
+      </div>
+      <div class="feature slide-up delay-1">
+        <h4>Enterprise Secure</h4>
+        <p>Built for scale with security-first architecture and compliance.</p>
+      </div>
+      <div class="feature slide-up delay-2">
+        <h4>Beautiful Results</h4>
+        <p>Visualizations that make data actionable and accessible to all.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit" class="btn primary">Send Message</button>
-    </form>
+  <section id="team" class="team-section">
+    <h2 class="section-title fade-in">Meet the Analysts</h2>
+    <div class="team-grid">
+      <div class="team-member fade-in-delay">
+        <img src="https://via.placeholder.com/150" alt="Analyst 1">
+        <h4>Lebo Mokoena</h4>
+        <p>Data Strategist</p>
+      </div>
+      <div class="team-member fade-in-delay-2">
+        <img src="https://via.placeholder.com/150" alt="Analyst 2">
+        <h4>Sandile Zulu</h4>
+        <p>BI Developer</p>
+      </div>
+      <div class="team-member fade-in-delay-3">
+        <img src="https://via.placeholder.com/150" alt="Analyst 3">
+        <h4>Thando Ncube</h4>
+        <p>Internal Auditor</p>
+      </div>
+    </div>
   </section>
 
   <footer class="footer">
-    <p>&copy; 2025 GRID Analytics. All rights reserved.</p>
+    <div class="footer-grid">
+      <div>
+        <h4>Grid Analytics</h4>
+        <p>© 2025 Grid Business Analytics. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>📍 82 Katherine Street, Sandton</p>
+        <p>📞 063 827 0918</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="#services">Services</a><br/>
+        <a href="contact.html">Contact</a><br/>
+      </div>
+    </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
