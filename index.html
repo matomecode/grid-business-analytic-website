@@ -3,58 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grid Business Analytics</title>
+  <title>GRID - Business Analytics</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
 </head>
 <body>
   <header class="navbar">
     <div class="logo">GRID</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="sign-in" href="#">Sign In</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1 class="fade-in">Unlock Your Data Power</h1>
-    <p class="fade-in delay-1">Advanced Analytics | Dashboards | Internal Audit Tools</p>
-    <a href="#contact" class="btn fade-in delay-2">Let’s Talk</a>
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Insights for<br><span>Data-Driven Decisions</span></h1>
+      <p>Powerful analytics tools to help you visualize and understand your data.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn primary">Get Started</a>
+        <a href="#about" class="btn secondary">Learn More</a>
+      </div>
+    </div>
+    <div class="dashboard-preview animate">
+      <img src="https://dummyimage.com/500x300/141432/ffffff&text=Dashboard+Mockup" alt="Dashboard mockup">
+    </div>
   </section>
 
-  <section id="about" class="section">
-    <h2 class="fade-in">Who We Are</h2>
-    <p class="fade-in delay-1">Grid Business Analytics specializes in transforming raw data into actionable insights. We help businesses harness the full potential of their data using clean visual dashboards, automation, and audit intelligence.</p>
-  </section>
-
-  <section id="services" class="features section">
-    <h2 class="fade-in">What We Do</h2>
-    <div class="cards">
-      <div class="card fade-in delay-1">
-        <h3>Data Strategy</h3>
-        <p>We align your business goals with a data strategy roadmap that drives growth.</p>
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <p class="subhead">Empowering your business with advanced data analytics solutions.</p>
+    <div class="card-grid">
+      <div class="card animate">
+        <h3>📊 Data Analysis</h3>
+        <p>Comprehensive insight from your data to drive strategic outcomes.</p>
       </div>
-      <div class="card fade-in delay-2">
-        <h3>Dashboards & Reporting</h3>
-        <p>Real-time insights using interactive dashboards tailored for finance and operations.</p>
+      <div class="card animate">
+        <h3>📈 Reporting</h3>
+        <p>Customizable reports to communicate key metrics clearly.</p>
       </div>
-      <div class="card fade-in delay-3">
-        <h3>Internal Audit Tools</h3>
-        <p>Automate your internal audit processes using CaseWare, Power BI and Excel automation.</p>
+      <div class="card animate">
+        <h3>📉 Visualization</h3>
+        <p>Interactive charts and graphs to explore your data visually.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section contact-section">
-    <h2 class="fade-in">Get in Touch</h2>
-    <p class="fade-in delay-1">We'd love to hear about your business challenge. Let's build something together.</p>
-    <a href="mailto:info@gridanalytics.com" class="btn fade-in delay-2">Email Us</a>
+  <section id="about" class="about">
+    <h2>Why GRID?</h2>
+    <p>GRID blends powerful technology with simple UX to help businesses unlock insights from data quickly.</p>
+    <ul>
+      <li>⚡ Lightning-fast dashboards</li>
+      <li>🎯 AI-powered forecasting</li>
+      <li>🔐 Enterprise-grade security</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
   </section>
 
   <footer class="footer">
-    <p>© 2025 Grid Business Analytics | 82 Katherine St, Sandton | 063 827 0918</p>
+    <p>&copy; 2025 GRID Analytics. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
