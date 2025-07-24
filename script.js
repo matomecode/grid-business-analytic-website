@@ -1,5 +1,20 @@
+// Smooth scroll on nav click
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: 'smooth',
+      });
+    }
+  });
+});
+
 // Animate on scroll
-const animatedItems = document.querySelectorAll('.animate');
+const fadeElements = document.querySelectorAll('.fade-in, .fade-in-delay, .fade-in-delay-2, .fade-in-delay-3, .slide-up, .zoom-in');
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -8,15 +23,4 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 
-animatedItems.forEach(item => observer.observe(item));
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
+fadeElements.forEach(el => observer.observe(el));
