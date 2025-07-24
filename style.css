@@ -1,0 +1,157 @@
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: #0a2540;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0a2540;
+}
+.navbar nav {
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar nav a {
+  text-decoration: none;
+  color: #0a2540;
+  font-weight: 500;
+}
+.navbar .btn-nav {
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(90deg, #635bff, #8268ff);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(90deg, #f6f9fc, #ffffff);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #0a2540;
+}
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+  color: #4c5773;
+}
+.btn-primary {
+  padding: 0.8rem 1.8rem;
+  background: linear-gradient(90deg, #635bff, #8268ff);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #564fff, #715fff);
+}
+
+/* Services Section */
+.services {
+  padding: 4rem 2rem;
+  background-color: #f6f9fc;
+  text-align: center;
+}
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #0a2540;
+}
+.card p {
+  color: #4c5773;
+}
+
+/* Call to Action */
+.cta {
+  padding: 4rem 2rem;
+  background: linear-gradient(90deg, #635bff, #8268ff);
+  color: white;
+  text-align: center;
+}
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.cta p {
+  margin-bottom: 1.5rem;
+}
+.btn-secondary {
+  background-color: #fff;
+  color: #635bff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-secondary:hover {
+  background-color: #f2f2ff;
+}
+
+/* Footer */
+.footer {
+  background-color: #0a2540;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+.footer p {
+  margin: 0.3rem 0;
+}
+
+/* Button Click Effect */
+.clicked {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
