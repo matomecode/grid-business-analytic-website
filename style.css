@@ -1,169 +1,149 @@
-/* Reset + Fonts */
+:root {
+  --primary: #0a84ff;
+  --dark: #0e0e0e;
+  --light: #f2f2f2;
+  --text: #1d1d1f;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0d0d2b;
-  color: #fff;
-  line-height: 1.6;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  scroll-behavior: smooth;
 }
+
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--primary);
 }
 
-/* Navbar */
 .navbar {
+  background: white;
   display: flex;
   justify-content: space-between;
+  padding: 1rem 2rem;
   align-items: center;
-  padding: 20px 10%;
-  background-color: #11113a;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
+  border-bottom: 1px solid #e2e2e2;
 }
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-}
-.nav-links {
+
+.navbar ul {
   display: flex;
+  gap: 2rem;
   list-style: none;
-  gap: 25px;
 }
-.nav-links a {
-  color: #c7c7ff;
-  font-weight: 500;
-}
-.sign-in {
-  background: #4e52ff;
-  padding: 8px 18px;
-  border-radius: 5px;
+
+.btn.primary {
+  background: var(--primary);
   color: white;
-  margin-left: 20px;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
-/* Hero */
+.btn.primary:hover {
+  background: #0066cc;
+}
+
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 10%;
-  background: linear-gradient(145deg, #1f1f3b, #0f0f29);
-}
-.hero-text h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-.hero-text span {
-  color: #00f0ff;
-}
-.hero-buttons {
-  margin-top: 20px;
-}
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.primary {
-  background: #00f0ff;
-  color: #000;
-}
-.secondary {
-  border: 1px solid #00f0ff;
-  margin-left: 10px;
-}
-.dashboard-preview img {
-  max-width: 500px;
-  border-radius: 16px;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 10vh 2rem;
 }
 
-/* Services */
-.services {
-  padding: 60px 10%;
+.hero h1 {
+  font-size: 3rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.grid-section,
+.why-section,
+.team-section {
+  padding: 6rem 2rem;
   text-align: center;
-  background-color: #141432;
 }
-.subhead {
-  color: #aaa;
-  margin-bottom: 40px;
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
+
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
 .card {
-  background: #1c1c44;
-  padding: 25px;
-  border-radius: 14px;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
+
 .card:hover {
-  transform: translateY(-8px);
-}
-.card h3 {
-  margin-bottom: 12px;
+  transform: translateY(-10px);
 }
 
-/* About */
-.about {
-  padding: 60px 10%;
-  background: #1a1a3d;
-}
-.about ul {
-  margin-top: 20px;
-  list-style: none;
-}
-.about ul li {
-  margin-bottom: 10px;
-  padding-left: 20px;
-}
-
-/* Contact */
-.contact {
-  padding: 60px 10%;
-  background-color: #141432;
-}
-.contact form {
+.features {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: auto;
-}
-.contact input,
-.contact textarea {
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
-/* Footer */
+.feature {
+  width: 250px;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 200px;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+}
+
 .footer {
-  padding: 30px;
-  text-align: center;
-  background-color: #0f0f29;
-  color: #aaa;
+  background: var(--dark);
+  color: white;
+  padding: 3rem 2rem;
 }
 
-/* Animation */
-.animate {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s forwards;
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
