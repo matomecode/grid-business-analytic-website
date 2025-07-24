@@ -1,28 +1,22 @@
-// Smooth scroll to anchors
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-});
-
-// Animate elements on scroll
-const faders = document.querySelectorAll(".fade-in");
+// Animate on scroll
+const animatedItems = document.querySelectorAll('.animate');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.animationPlayState = "running";
-      observer.unobserve(entry.target);
+      entry.target.classList.add('visible');
     }
   });
-}, {
-  threshold: 0.1
-});
+}, { threshold: 0.1 });
 
-faders.forEach(el => {
-  el.style.animationPlayState = "paused";
-  observer.observe(el);
+animatedItems.forEach(item => observer.observe(item));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 });
