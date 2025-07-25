@@ -1,195 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grid Business Analytics | Financial Data Solutions</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Business Analytics</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Animation Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <span class="logo-icon">📊</span>
-      <span>Grid</span>
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-content">
+      <div class="loader-circle"></div>
+      <div class="loader-circle"></div>
     </div>
-    <nav class="desktop-nav">
-      <a href="#solutions" class="nav-link">Solutions</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <a href="#start" class="btn-nav">Get started →</a>
-    </nav>
-    <button class="mobile-menu-btn" aria-label="Menu">
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-    </button>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content container">
-        <h1 class="hero-title">
-          <span class="title-line">Financial clarity through</span><br />
-          <span class="title-line highlight">data intelligence</span>
-        </h1>
-        <p class="hero-subtitle">
-          Advanced analytics and accounting solutions for modern businesses
-        </p>
-        <div class="hero-cta">
-          <a href="#start" class="btn-primary">
-            <span>Get started</span>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              >
-              <path
-                d="M5 12H19M19 12L12 5M19 12L12 19"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-          <a href="#contact" class="btn-secondary">Contact sales →</a>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">Grid Analytics</div>
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
+      <button class="mobile-menu-btn">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </nav>
 
-      <!-- Floating cards for animated hero visuals -->
-      <div class="floating-cards">
-        <div class="floating-card" aria-hidden="true"></div>
-        <div class="floating-card" aria-hidden="true"></div>
-        <div class="floating-card" aria-hidden="true"></div>
-      </div>
-    </section>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#solutions" class="nav-link">Solutions</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
 
-    <!-- Keep your marquee and other sections as is -->
-    <section class="marquee">
-      <div class="marquee-content">
-        <span>Financial Audits</span>
-        <span>Data Analytics</span>
-        <span>Risk Management</span>
-        <span>Internal Controls</span>
-        <span>IFRS Compliance</span>
-        <span>Financial Reporting</span>
-        <span>Financial Audits</span>
-        <span>Data Analytics</span>
-        <span>Risk Management</span>
-        <span>Internal Controls</span>
-        <span>IFRS Compliance</span>
-        <span>Financial Reporting</span>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Powerful Business Analytics Made Simple</h1>
+      <p>Transform your data into actionable insights with our intuitive analytics platform designed for modern businesses.</p>
+      <button class="btn btn-primary">Get Started</button>
+      <button class="btn btn-secondary">Learn More</button>
+    </div>
 
-    <section class="solutions" id="solutions">
-      <div class="section-header container">
-        <span class="section-label">Solutions</span>
-        <h2 class="section-title">Complete financial intelligence</h2>
-      </div>
-      <div class="solution-cards container">
-        <div class="solution-card card">
-          <div class="card-icon">📊</div>
-          <h3>Audit & Compliance</h3>
-          <p>Comprehensive financial audits ensuring regulatory compliance and identifying improvement opportunities.</p>
-          <a href="#" class="card-link">Learn more →</a>
-        </div>
-        <div class="solution-card card">
-          <div class="card-icon">📈</div>
-          <h3>Data Analytics</h3>
-          <p>Transform financial data into actionable insights with our advanced analytics solutions.</p>
-          <a href="#" class="card-link">Learn more →</a>
-        </div>
-        <div class="solution-card card">
-          <div class="card-icon">🔒</div>
-          <h3>Risk Management</h3>
-          <p>Identify and mitigate financial risks with our comprehensive assessment frameworks.</p>
-          <a href="#" class="card-link">Learn more →</a>
-        </div>
-      </div>
-    </section>
+    <!-- Floating Cards Background -->
+    <div class="floating-cards">
+      <div class="floating-card"></div>
+      <div class="floating-card"></div>
+      <div class="floating-card"></div>
+    </div>
+  </section>
 
-    <section class="about" id="about">
-      <div class="section-header container">
-        <span class="section-label">About us</span>
-        <h2 class="section-title">Built by finance professionals</h2>
-      </div>
-      <div class="founders-grid container">
-        <div class="founder-card card">
-          <div class="founder-photo" style="background-image: url('matome-photo.jpg');"></div>
-          <h3>Matome Rambau</h3>
-          <p class="founder-title">Data, Risk and Internal Control Specialist</p>
-          <p class="founder-bio">
-            BCom Accounting graduate with expertise in financial audits, data analysis, and regulatory compliance.
-          </p>
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">Key Features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Real-time Analytics</h3>
+          <p>Get up-to-the-minute insights with our powerful real-time processing engine.</p>
         </div>
-        <div class="founder-card card">
-          <div class="founder-photo" style="background-image: url('ntshidiseng-photo.jpg');"></div>
-          <h3>Ntshidiseng Mofokeng</h3>
-          <p class="founder-title">SAIPA Accountant</p>
-          <p class="founder-bio">
-            Accounting professional specializing in financial reporting, tax compliance, and SME accounting solutions.
-          </p>
+        <div class="card">
+          <h3>Custom Dashboards</h3>
+          <p>Build personalized dashboards tailored to your specific business needs.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="cta" id="start">
-      <div class="cta-content container">
-        <h2>Ready to transform your financial data?</h2>
-        <p>Get started with Grid Business Analytics today.</p>
-        <div class="cta-actions">
-          <a href="#contact" class="btn-primary">Get started</a>
-          <a href="#" class="btn-secondary">Contact sales →</a>
+        <div class="card">
+          <h3>AI Predictions</h3>
+          <p>Leverage machine learning to forecast trends and opportunities.</p>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" id="contact">
-    <div class="footer-grid container">
-      <div class="footer-col">
-        <div class="logo">
-          <span class="logo-icon">📊</span>
-          <span>Grid</span>
-        </div>
-        <address>
-          <p>📍 82 Katherine Street, Sandton</p>
-          <p>📞 +27 63 827 0918</p>
-          <p>✉️ hello@gridanalytics.co.za</p>
-        </address>
-      </div>
-      <div class="footer-col">
-        <h4>Solutions</h4>
-        <ul>
-          <li><a href="#">Audit & Compliance</a></li>
-          <li><a href="#">Data Analytics</a></li>
-          <li><a href="#">Risk Management</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#about">About us</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
       </div>
     </div>
-    <div class="footer-bottom container">
-      <p>© 2023 Grid Business Analytics. All rights reserved.</p>
+  </section>
+
+  <!-- Data Visualization Section -->
+  <section id="solutions" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Data Visualization</h2>
+      <div class="chart-container">
+        <canvas id="analyticsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="section-title">Pricing Plans</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Starter</h3>
+          <p>Perfect for small businesses</p>
+          <button class="btn btn-secondary">Select Plan</button>
+        </div>
+        <div class="card">
+          <h3>Professional</h3>
+          <p>Ideal for growing companies</p>
+          <button class="btn btn-primary">Select Plan</button>
+        </div>
+        <div class="card">
+          <h3>Enterprise</h3>
+          <p>For large organizations</p>
+          <button class="btn btn-secondary">Select Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="form-control" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Grid Analytics. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
