@@ -39,3 +39,39 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 });
+
+// Button hover effects
+document.querySelectorAll('.btn-primary, .btn-secondary, .btn-nav').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    btn.style.setProperty('--mouse-x', `${x}px`);
+    btn.style.setProperty('--mouse-y', `${y}px`);
+  });
+});
+
+// Animate elements when they come into view
+const animateOnScroll = () => {
+  const elements = document.querySelectorAll('.solution-card, .founder-card');
+  
+  elements.forEach(element => {
+    const elementPosition = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+    
+    if (elementPosition < screenPosition) {
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    }
+  });
+};
+
+// Set initial state for animated elements
+document.querySelectorAll('.solution-card, .founder-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+});
+
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
