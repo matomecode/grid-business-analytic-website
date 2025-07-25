@@ -1,77 +1,43 @@
-// Mobile menu toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileMenu = document.querySelector('.mobile-menu');
-mobileMenuBtn.addEventListener('click', () => {
-  mobileMenuBtn.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-});
+// Smooth floating animations for hero section cards and SVG blobs
+document.addEventListener('DOMContentLoaded', () => {
+  const floatingCards = document.querySelectorAll('.floating-card');
 
-// Close mobile menu when clicking a link
-const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-btn');
-mobileLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenuBtn.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  });
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const target = document.querySelector(targetId);
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - 80,
-        behavior: 'smooth'
+  // Helper to create a smooth float animation using GSAP or fallback
+  if (typeof gsap !== 'undefined') {
+    floatingCards.forEach((card, i) => {
+      gsap.to(card, {
+        y: 15,
+        x: 15,
+        duration: 6,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+        delay: i * 2,
       });
-    }
-  });
-});
-
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
+    });
   } else {
-    navbar.classList.remove('scrolled');
+    // Fallback to CSS keyframe animation is already applied in CSS
+  }
+
+  // Optional: subtle parallax effect on mouse move for hero
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      floatingCards.forEach((card, i) => {
+        const moveX = x * (10 + i * 5);
+        const moveY = y * (10 + i * 5);
+        card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      floatingCards.forEach((card) => {
+        card.style.transform = '';
+      });
+    });
   }
 });
-
-// Button hover effects
-document.querySelectorAll('.btn-primary, .btn-secondary, .btn-nav').forEach(btn => {
-  btn.addEventListener('mousemove', (e) => {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    btn.style.setProperty('--mouse-x', `${x}px`);
-    btn.style.setProperty('--mouse-y', `${y}px`);
-  });
-});
-
-// Animate elements when they come into view
-const animateOnScroll = () => {
-  const elements = document.querySelectorAll('.solution-card, .founder-card');
-  
-  elements.forEach(element => {
-    const elementPosition = element.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-    
-    if (elementPosition < screenPosition) {
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-    }
-  });
-};
-
-// Set initial state for animated elements
-document.querySelectorAll('.solution-card, .founder-card').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-});
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
