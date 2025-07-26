@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compliance Dashboards | Grid Analytics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .service-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 40% 60%, rgba(255, 107, 107, 0.1) 0%, transparent 25%),
+        radial-gradient(circle at 60% 40%, rgba(99, 91, 255, 0.1) 0%, transparent 25%);
+      z-index: -1;
+      animation: abstractBG 25s ease infinite;
+    }
+    .dashboard-preview {
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 2rem 0;
+      border-left: 3px solid #635bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="service-background"></div>
+  
+  <header class="navbar">
+    <a href="index.html" class="logo">GridAnalytics</a>
+    <nav>
+      <a href="index.html">← Back to Services</a>
+    </nav>
+  </header>
+
+  <main class="service-detail">
+    <article class="expanded-card">
+      <h1>Compliance Dashboards</h1>
+      <div class="content">
+        <h2>Real-Time Regulatory Monitoring</h2>
+        <p>Interactive visualizations that keep you ahead of compliance requirements.</p>
+        
+        <div class="dashboard-preview">
+          <h3>Sample Dashboard Features</h3>
+          <ul>
+            <li>PFMA/MFMA compliance scoring</li>
+            <li>Automated control testing</li>
+            <li>Risk heat maps</li>
+            <li>Audit trail visualization</li>
+          </ul>
+        </div>
+        
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>For Public Sector</h3>
+            <ul>
+              <li>Procurement compliance tracking</li>
+              <li>Expenditure benchmarking</li>
+            </ul>
+          </div>
+          <div class="feature">
+            <h3>For Private Sector</h3>
+            <ul>
+              <li>IFRS compliance monitoring</li>
+              <li>Tax obligation tracking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

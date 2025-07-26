@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Grid Analytics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .team-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        conic-gradient(from 90deg at 25% 25%, 
+          rgba(99, 91, 255, 0.08) 0deg, 
+          rgba(78, 205, 196, 0.08) 90deg, 
+          rgba(255, 107, 107, 0.08) 180deg, 
+          rgba(130, 104, 255, 0.08) 270deg);
+      background-size: 200% 200%;
+      animation: abstractBG 30s linear infinite;
+      z-index: -1;
+    }
+    .founder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .founder {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="team-background"></div>
+  
+  <header class="navbar">
+    <a href="index.html" class="logo">GridAnalytics</a>
+    <nav>
+      <a href="index.html">← Back to Home</a>
+    </nav>
+  </header>
+
+  <main class="service-detail">
+    <article class="expanded-card">
+      <h1>Our Team</h1>
+      <div class="founder-grid">
+        <div class="founder" style="--accent: #635bff;">
+          <h2>Matome Rambau</h2>
+          <p class="title">Data Analyst & Accountant</p>
+          <ul>
+            <li>Advanced Python data pipelines</li>
+            <li>Financial reporting automation</li>
+            <li>Risk analysis modeling</li>
+          </ul>
+        </div>
+        <div class="founder" style="--accent: #4ecdc4;">
+          <h2>Ntshidiseng Mofokeng</h2>
+          <p class="title">SAIPA Accountant</p>
+          <ul>
+            <li>Regulatory compliance systems</li>
+            <li>Accounting workflow automation</li>
+            <li>Financial dashboard design</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
