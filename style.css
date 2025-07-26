@@ -1,4 +1,9 @@
-/* Core Styles */
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: 'Inter', sans-serif;
   color: #0a2540;
@@ -6,7 +11,7 @@ body {
   background-color: #f8fafc;
 }
 
-/* Subtle Animated Background */
+/* Animated Background */
 .animated-background {
   position: fixed;
   top: 0;
@@ -25,35 +30,74 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Light Glass Cards */
+/* Glass Cards Only */
 .card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  padding: 2rem;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+/* 4K Glass Highlight (Top Edge) */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0), 
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0));
+  filter: blur(0.3px);
+}
+
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Soft Glass Navbar */
+/* Rest of your existing CSS (navbar, hero, etc.) */
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
   background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 2rem;
+  border-radius: 10px;
 }
 
-/* Delicate CTA Glass */
-.cta {
-  background: rgba(99, 91, 255, 0.08);
-  backdrop-filter: blur(4px);
-  border-top: 1px solid rgba(99, 91, 255, 0.1);
-  border-bottom: 1px solid rgba(99, 91, 255, 0.1);
-}
+/* ... (keep all other existing styles) ... */
 
-/* Content Optimization */
-.hero, .services, .about {
-  background: rgba(255, 255, 255, 0.7);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
