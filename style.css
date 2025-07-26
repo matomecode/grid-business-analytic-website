@@ -1,119 +1,57 @@
-/* Reset & Glass Core */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Inter', sans-serif;
-  color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
+// Dynamic Glass Effects
+document.addEventListener("DOMContentLoaded", () => {
+  // Interactive glass tilt effect
+  const cards = document.querySelectorAll('.glass-panel');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const x = e.clientX - card.getBoundingClientRect().left;
+      const y = e.clientY - card.getBoundingClientRect().top;
+      const centerX = card.offsetWidth / 2;
+      const centerY = card.offsetHeight / 2;
+      const angleX = (y - centerY) / 20;
+      const angleY = (centerX - x) / 20;
+      
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(${angleX}deg)
+        rotateY(${angleY}deg)
+      `;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    });
+  });
 
-/* Hyper-Visible Animated Background */
-.animated-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(-45deg, 
-    #635bff, #ff6b6b, #4ecdc4, #8268ff,
-    #ff8e8e, #63ffb1, #ff63f7);
-  background-size: 400% 400%;
-  animation: gradientBG 6s ease infinite;
-  z-index: -1;
-  opacity: 0.7;
-}
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+  // Animated background intensity control
+  const bg = document.querySelector('.animated-background');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    bg.style.opacity = 0.7 + (scrollY * 0.001);
+    bg.style.filter = `blur(${Math.min(5, scrollY * 0.01)}px)`;
+  });
+});
 
-/* Glass Panel Base Style */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.18) !important;
-  backdrop-filter: blur(25px) saturate(120%);
-  -webkit-backdrop-filter: blur(25px) saturate(120%);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.18),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
+// Keep original smooth scroll and button effects
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    const targetId = this.getAttribute("href").substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: "smooth"
+      });
+    }
+  });
+});
 
-/* Glass Components */
-.glass-btn {
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 
-    0 4px 16px rgba(0, 0, 0, 0.2),
-    inset 0 0 12px rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-.glass-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.3),
-    inset 0 0 12px rgba(255, 255, 255, 0.2);
-}
-.glass-divider {
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.4), 
-    transparent);
-  margin: 1.5rem 0;
-}
-.glass-highlight {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 8px;
-  border-left: 3px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Glass CTA Special */
-.glass-cta {
-  background: linear-gradient(
-    90deg, 
-    rgba(99, 91, 255, 0.35), 
-    rgba(130, 104, 255, 0.35)
-  ) !important;
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Layout Adjustments */
-.navbar {
-  background: rgba(10, 37, 64, 0.85);
-  backdrop-filter: blur(15px);
-}
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(255, 255, 255, 0.25) !important;
-}
-.hero-content {
-  max-width: 800px;
-  padding: 4rem;
-  margin: 0 auto;
-}
-
-/* Optimized for Glass */
-h1, h2, h3 {
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-p {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Footer Glass */
-.glass-footer {
-  background: rgba(10, 37, 64, 0.7);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+document.querySelectorAll('a[class*="btn"]').forEach(btn => {
+  btn.addEventListener("mousedown", () => {
+    btn.classList.add("clicked");
+  });
+  btn.addEventListener("mouseup", () => {
+    btn.classList.remove("clicked");
+  });
+});
