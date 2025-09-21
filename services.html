@@ -1,83 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Grid Business Analytics | Services</title>
-
-  <meta name="description" content="Explore the full range of services at Grid Business Analytics including financial data analytics, accounting automation, and compliance dashboards." />
-  <meta name="keywords" content="financial analytics, accounting automation, compliance dashboards, business intelligence, Sandton accounting services" />
-
-  <meta property="og:title" content="Grid Business Analytics | Services" />
-  <meta property="og:description" content="Explore our professional services in financial data analytics, automation, and compliance dashboards." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gridanalytics.co.za/services.html" />
-  <meta property="og:image" content="https://gridanalytics.co.za/og-image.jpg" />
-
-  <link rel="canonical" href="https://gridanalytics.co.za/services.html" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Grid Business Analytics",
-    "image": "https://gridanalytics.co.za/og-image.jpg",
-    "url": "https://gridanalytics.co.za/",
-    "telephone": "+27-63-827-0918",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "82 Katherine Street",
-      "addressLocality": "Sandton",
-      "addressRegion": "Gauteng",
-      "postalCode": "2196",
-      "addressCountry": "ZA"
-    },
-    "description": "Grid Business Analytics specializes in financial data analytics, accounting automation, and compliance dashboards for businesses in Sandton and across South Africa."
-  }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Grid Business Analytics</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="animated-background"></div>
-
-  <header class="navbar">
-    <div class="logo">GridAnalytics</div>
-    <nav>
-      <ul>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a class="btn-nav" href="index.html#start">Get Started</a></li>
-      </ul>
-    </nav>
+  <header>
+    <div class="container">
+      <h1 class="logo">Grid Analytics</h1>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="card">
-        <h3>Financial Data Analytics</h3>
-        <p>Transform your accounting data into actionable insights with our advanced analytics solutions. We help uncover trends, anomalies, and opportunities in your financial data.</p>
-      </div>
-      <div class="card">
-        <h3>Accounting Automation</h3>
-        <p>Streamline your accounting processes with custom automation solutions that reduce manual work and improve accuracy in financial reporting.</p>
-      </div>
-      <div class="card">
-        <h3>Compliance Dashboards</h3>
-        <p>Interactive dashboards that monitor financial compliance in real-time, helping you stay audit-ready while identifying potential risks.</p>
+  <section class="services-page">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="grid-services">
+        <div class="service-card">
+          <h3>Accounting Automation</h3>
+          <p>Automate routine accounting tasks to save time and reduce errors.</p>
+        </div>
+        <div class="service-card">
+          <h3>Data Analytics</h3>
+          <p>Transform raw data into actionable business insights.</p>
+        </div>
+        <div class="service-card">
+          <h3>Financial Dashboards</h3>
+          <p>Track KPIs with real-time dashboards and reporting tools.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tax Compliance</h3>
+          <p>Ensure your business meets regulatory requirements seamlessly.</p>
+        </div>
+        <div class="service-card">
+          <h3>Business Consulting</h3>
+          <p>Expert advice to optimize operations and maximize profits.</p>
+        </div>
+        <div class="service-card">
+          <h3>Training & Workshops</h3>
+          <p>Upskill your team with tailored training sessions.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer" id="contact">
-    <p>📍 82 Katherine Street, Sandton</p>
-    <p>📞 063 827 0918</p>
-    <p>&copy; 2025 Grid Business Analytics. All rights reserved.</p>
-    <p>Content, design, and services are proprietary to Grid Business Analytics.</p>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Grid Business Analytics. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
