@@ -1,14 +1,4 @@
-// ===== Hamburger Menu Toggle =====
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-}
-
-// ===== Smooth Scroll for Anchor Links =====
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     const targetId = this.getAttribute("href").substring(1);
@@ -23,7 +13,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== Button Click Animation =====
+// Button click animation
 document.querySelectorAll('a[class^="btn"]').forEach(btn => {
   btn.addEventListener("mousedown", () => {
     btn.classList.add("clicked");
