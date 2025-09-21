@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', resizeCanvas);
 
     const particles = [];
-    const particleCount = 60;
+    const particleCount = 80;
 
     // Use enhanced color palette for dynamic particles
     const colors = ['#635bff', '#ff6b6b', '#4ecdc4', '#8268ff', '#f093fb', '#f5576c', '#4facfe', '#00f2fe'];
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         this.y = Math.random() * canvas.height;
         this.vx = (Math.random() - 0.5) * 1.2;
         this.vy = (Math.random() - 0.5) * 1.2;
-        this.size = Math.random() * 4 + 2;
-        this.opacity = Math.random() * 0.8 + 0.3;
+        this.size = Math.random() * 5 + 2;
+        this.opacity = Math.random() * 0.9 + 0.4;
         this.color = colors[Math.floor(Math.random() * colors.length)];
         this.colorChangeSpeed = Math.random() * 0.02 + 0.005;
         this.colorPhase = Math.random() * Math.PI * 2;
@@ -98,9 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         
-        // Create glowing effect
-        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
+        // Create stronger glowing effect
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 3);
         gradient.addColorStop(0, this.color);
+        gradient.addColorStop(0.4, this.color + '80');
         gradient.addColorStop(1, this.color + '00');
         ctx.fillStyle = gradient;
         ctx.fill();
