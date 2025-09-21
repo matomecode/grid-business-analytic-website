@@ -9,7 +9,7 @@
       "date": "2025-01-21",
       "category": "analytics",
       "tags": ["analytics", "AI", "trends", "business intelligence"],
-      "image": "/media/images/What-is-business-intelligence.jpg",
+      "image": "/media/images/financial-trends-2025.jpg",
       "video": null,
       "featured": true,
       "readTime": "5 min read"
@@ -23,7 +23,7 @@
       "date": "2025-01-18",
       "category": "automation",
       "tags": ["automation", "efficiency", "tools", "time-saving"],
-      "image": "/media/images/What-is-business-intelligence.jpg",
+      "image": "/media/images/automation-guide.jpg",
       "video": "/media/videos/automation-demo.mp4",
       "featured": false,
       "readTime": "7 min read"
@@ -37,7 +37,7 @@
       "date": "2025-01-15",
       "category": "compliance",
       "tags": ["SARS", "compliance", "digital transformation", "tax"],
-      "image": "/media/images/What-is-business-intelligence.jpg",
+      "image": "/media/images/compliance-update.jpg",
       "video": null,
       "featured": false,
       "readTime": "4 min read"
@@ -51,7 +51,7 @@
       "date": "2025-01-12",
       "category": "insights",
       "tags": ["data visualization", "dashboards", "business intelligence", "decision making"],
-      "image": "/media/images/What-is-business-intelligence.jpg",
+      "image": "/media/images/business-insights.jpg",
       "video": "/media/videos/dashboard-demo.mp4",
       "featured": false,
       "readTime": "6 min read"
