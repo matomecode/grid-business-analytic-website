@@ -1,38 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Grid Business Analytics | Data-Driven Accounting & Financial Insights in Sandton</title>
+
+  <meta name="description" content="Grid Business Analytics in Sandton provides financial data analytics, accounting automation, and compliance dashboards. Smarter financial decisions powered by data." />
+  <meta name="keywords" content="financial analytics, accounting automation, compliance dashboards, business intelligence, Sandton accounting services" />
+
+  <meta property="og:title" content="Grid Business Analytics | Data-Driven Accounting & Financial Insights" />
+  <meta property="og:description" content="Bridging accounting expertise with cutting-edge analytics. Financial data analytics, automation & compliance dashboards in Sandton." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gridanalytics.co.za/" />
+  <meta property="og:image" content="https://gridanalytics.co.za/og-image.jpg" />
+
+  <link rel="canonical" href="https://gridanalytics.co.za/" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Grid Business Analytics",
+    "image": "https://gridanalytics.co.za/og-image.jpg",
+    "url": "https://gridanalytics.co.za/",
+    "telephone": "+27-63-827-0918",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "82 Katherine Street",
+      "addressLocality": "Sandton",
+      "addressRegion": "Gauteng",
+      "postalCode": "2196",
+      "addressCountry": "ZA"
+    },
+    "description": "Grid Business Analytics specializes in financial data analytics, accounting automation, and compliance dashboards for businesses in Sandton and across South Africa."
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG775LV10N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EG775LV10N');
+</script>
+
 </head>
 <body>
   <div class="animated-background"></div>
-
+  
   <header class="navbar">
-    <div class="logo">Your Business</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <div class="logo">GridAnalytics</div>
+    <nav>
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn-nav" href="#start">Get Started</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to Our Website</h1>
-      <p>Your tagline goes here.</p>
-      <a href="services.html" class="btn-primary">View Services</a>
-    </section>
-  </main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Data-Driven Accounting Solutions</h1>
+      <p>Bridging the gap between accounting expertise and cutting-edge data analytics for smarter financial decisions.</p>
+      <a href="services.html" class="btn-primary">Explore Services</a>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Your Business. All rights reserved.</p>
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <div class="about-content">
+      <p>Grid Business Analytics is a specialized firm combining accounting expertise with data analytics. Our team includes qualified accountants and data analysts who understand both numbers and the technology that makes them meaningful.</p>
+      <p>We bring together financial acumen and technical skills to deliver solutions that go beyond traditional accounting services.</p>
+    </div>
+  </section>
+
+  <section class="cta" id="start">
+    <h2>Ready to Get Started?</h2>
+    <p>Let us help you transform your financial data into business intelligence.</p>
+    <a href="#contact" class="btn-secondary">Contact Us</a>
+  </section>
+
+  <footer class="footer" id="contact">
+    <p>📍 82 Katherine Street, Sandton</p>
+    <p>📞 063 827 0918</p>
+    <p>&copy; 2025 Grid Business Analytics. All rights reserved.</p>
+    <p>Content, design, and services are proprietary to Grid Business Analytics.</p>
   </footer>
 
   <script src="script.js"></script>
