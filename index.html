@@ -77,6 +77,48 @@
     <div class="hero-content">
       <h1>Data-Driven Accounting Solutions</h1>
       <p>Bridging the gap between accounting expertise and cutting-edge data analytics for smarter financial decisions.</p>
+      
+      <!-- Interactive Data Visualizations -->
+      <div class="data-viz-container">
+        <!-- Chart 1: Revenue Analytics -->
+        <div class="chart-widget">
+          <h4>Revenue Analytics</h4>
+          <div class="chart" id="revenueChart">
+            <div class="bar" data-value="85"></div>
+            <div class="bar" data-value="72"></div>
+            <div class="bar" data-value="93"></div>
+            <div class="bar" data-value="68"></div>
+            <div class="bar" data-value="89"></div>
+            <div class="bar" data-value="76"></div>
+          </div>
+        </div>
+
+        <!-- Chart 2: Compliance Score -->
+        <div class="chart-widget">
+          <h4>Compliance Score</h4>
+          <div class="pie-chart" id="complianceChart">
+            <div class="pie-slice" style="--percentage: 92;"></div>
+            <div class="pie-center">92%</div>
+          </div>
+        </div>
+
+        <!-- Chart 3: Growth Trend -->
+        <div class="chart-widget">
+          <h4>Growth Trend</h4>
+          <div class="line-chart" id="growthChart">
+            <svg viewBox="0 0 200 100">
+              <polyline class="trend-line" points="20,80 50,60 80,40 110,30 140,20 170,15" fill="none" stroke="#635bff" stroke-width="3"/>
+              <circle cx="20" cy="80" r="4" fill="#635bff" class="data-point"/>
+              <circle cx="50" cy="60" r="4" fill="#635bff" class="data-point"/>
+              <circle cx="80" cy="40" r="4" fill="#635bff" class="data-point"/>
+              <circle cx="110" cy="30" r="4" fill="#635bff" class="data-point"/>
+              <circle cx="140" cy="20" r="4" fill="#635bff" class="data-point"/>
+              <circle cx="170" cy="15" r="4" fill="#635bff" class="data-point"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
       <a href="services.html" class="btn-primary">Explore Services</a>
     </div>
   </section>
