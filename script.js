@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.8;
-        this.vy = (Math.random() - 0.5) * 0.8;
-        this.size = Math.random() * 3 + 1;
-        this.opacity = Math.random() * 0.6 + 0.2;
+        this.vx = (Math.random() - 0.5) * 1.2;
+        this.vy = (Math.random() - 0.5) * 1.2;
+        this.size = Math.random() * 4 + 2;
+        this.opacity = Math.random() * 0.8 + 0.3;
         this.color = colors[Math.floor(Math.random() * colors.length)];
         this.colorChangeSpeed = Math.random() * 0.02 + 0.005;
         this.colorPhase = Math.random() * Math.PI * 2;
@@ -108,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    // Initialize particles
-    for (let i = 0; i < particleCount; i++) {
+    // Initialize particles with better visibility
+    for (let i = 0; i < particleCount * 1.2; i++) {
       particles.push(new Particle());
     }
 
