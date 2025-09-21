@@ -23,16 +23,16 @@ body {
   pointer-events: none;
 }
 
-/* Animated Background */
+/* Animated Background - Enhanced Dynamic */
 .animated-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(-45deg, #635bff, #ff6b6b, #4ecdc4, #8268ff);
-  background-size: 400% 400%;
-  animation: gradientBG 8s ease infinite;
+  background: linear-gradient(-45deg, #635bff, #ff6b6b, #4ecdc4, #8268ff, #f093fb, #f5576c, #4facfe, #00f2fe);
+  background-size: 600% 600%;
+  animation: gradientBG 12s ease infinite;
   z-index: -1;
   opacity: 0.6;
 }
@@ -41,14 +41,20 @@ body {
   0% {
     background-position: 0% 50%;
   }
-  25% {
+  16% {
+    background-position: 25% 75%;
+  }
+  33% {
     background-position: 50% 100%;
   }
   50% {
+    background-position: 75% 75%;
+  }
+  66% {
     background-position: 100% 50%;
   }
-  75% {
-    background-position: 50% 0%;
+  83% {
+    background-position: 75% 25%;
   }
   100% {
     background-position: 0% 50%;
@@ -187,17 +193,23 @@ body {
   margin: 2rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.services-analytics {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
+
+.services-analytics .chart-widget {
+  max-width: 200px;
+}
+/* Services Section with 3D Cards */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  perspective: 1200px;
 }
 .card {
   background: rgba(255, 255, 255, 0.2);
@@ -207,22 +219,53 @@ body {
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  transition: all 0.4s ease;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
 }
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 91, 255, 0.1), rgba(130, 104, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.5);
-  background: rgba(255, 255, 255, 0.25);
+  transform: rotateY(8deg) rotateX(8deg) translateY(-15px) translateZ(20px);
+  box-shadow: 
+    0 25px 50px rgba(31, 38, 135, 0.5),
+    0 0 30px rgba(99, 91, 255, 0.3);
 }
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:nth-child(even):hover {
+  transform: rotateY(-8deg) rotateX(8deg) translateY(-15px) translateZ(20px);
+}
+
 .card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.8rem;
   color: #0a2540;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
 }
 .card p {
   color: #4c5773;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* About Section with Glassmorphism */
@@ -307,6 +350,136 @@ body {
   margin: 0.3rem 0;
 }
 
+/* Interactive Data Visualizations */
+.data-viz-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+  max-width: 800px;
+}
+
+.chart-widget {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.chart-widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(99, 91, 255, 0.3);
+}
+
+.chart-widget h4 {
+  color: #0a2540;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Bar Chart */
+.chart {
+  height: 80px;
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  gap: 4px;
+}
+
+.bar {
+  width: 16px;
+  background: linear-gradient(180deg, #635bff, #8268ff);
+  border-radius: 3px 3px 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  animation: growBar 2s ease-out;
+}
+
+.bar:hover {
+  filter: brightness(1.2);
+  transform: scale(1.1);
+}
+
+.bar[data-value="85"] { height: 85%; }
+.bar[data-value="72"] { height: 72%; }
+.bar[data-value="93"] { height: 93%; }
+.bar[data-value="68"] { height: 68%; }
+.bar[data-value="89"] { height: 89%; }
+.bar[data-value="76"] { height: 76%; }
+
+@keyframes growBar {
+  from { height: 0; }
+  to { height: var(--final-height); }
+}
+
+/* Pie Chart */
+.pie-chart {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: conic-gradient(#635bff 0deg 331deg, rgba(255,255,255,0.3) 331deg 360deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotatePie 2s ease-out;
+}
+
+.pie-center {
+  color: #0a2540;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@keyframes rotatePie {
+  from { transform: rotate(-90deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Line Chart */
+.line-chart {
+  width: 100%;
+  height: 80px;
+}
+
+.line-chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+.trend-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawLine 3s ease-out forwards;
+}
+
+.data-point {
+  opacity: 0;
+  animation: fadeInPoint 0.5s ease-out forwards;
+}
+
+.data-point:nth-child(3) { animation-delay: 0.5s; }
+.data-point:nth-child(4) { animation-delay: 0.8s; }
+.data-point:nth-child(5) { animation-delay: 1.1s; }
+.data-point:nth-child(6) { animation-delay: 1.4s; }
+.data-point:nth-child(7) { animation-delay: 1.7s; }
+.data-point:nth-child(8) { animation-delay: 2s; }
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeInPoint {
+  to { opacity: 1; }
+}
+
 /* Button Click Effect */
 .clicked {
   transform: scale(0.96);
@@ -353,5 +526,18 @@ body {
   }
   .hero, .services, .about, .cta {
     margin: 1rem;
+  }
+  
+  .data-viz-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .chart-widget {
+    padding: 1rem;
+  }
+  
+  .card:hover {
+    transform: rotateY(4deg) rotateX(4deg) translateY(-10px);
   }
 }
