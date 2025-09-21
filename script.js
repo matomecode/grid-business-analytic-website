@@ -57,8 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const particles = [];
     const particleCount = 60;
 
-    // Use your original gradient colors
-    const colors = ['#635bff', '#ff6b6b', '#4ecdc4', '#8268ff'];
+    // Use enhanced color palette for dynamic particles
+    const colors = ['#635bff', '#ff6b6b', '#4ecdc4', '#8268ff', '#f093fb', '#f5576c', '#4facfe', '#00f2fe'];
+    let colorIndex = 0;
 
     class Particle {
       constructor() {
@@ -69,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
         this.size = Math.random() * 3 + 1;
         this.opacity = Math.random() * 0.6 + 0.2;
         this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.colorChangeSpeed = Math.random() * 0.02 + 0.005;
+        this.colorPhase = Math.random() * Math.PI * 2;
       }
 
       update() {
@@ -82,6 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Keep particles within bounds
         this.x = Math.max(0, Math.min(canvas.width, this.x));
         this.y = Math.max(0, Math.min(canvas.height, this.y));
+
+        // Dynamic color change
+        this.colorPhase += this.colorChangeSpeed;
+        const colorIndex = Math.floor((Math.sin(this.colorPhase) + 1) / 2 * colors.length);
+        this.color = colors[colorIndex];
       }
 
       draw() {
@@ -89,7 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.globalAlpha = this.opacity;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
+        
+        // Create glowing effect
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
+        gradient.addColorStop(0, this.color);
+        gradient.addColorStop(1, this.color + '00');
+        ctx.fillStyle = gradient;
         ctx.fill();
         ctx.restore();
       }
@@ -117,12 +130,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
           if (distance < 120) {
             ctx.save();
-            ctx.globalAlpha = (120 - distance) / 120 * 0.3;
+            ctx.globalAlpha = (120 - distance) / 120 * 0.25;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = particle.color;
-            ctx.lineWidth = 0.5;
+            
+            // Dynamic connection colors
+            const gradient = ctx.createLinearGradient(particle.x, particle.y, particles[j].x, particles[j].y);
+            gradient.addColorStop(0, particle.color);
+            gradient.addColorStop(1, particles[j].color);
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = 1;
             ctx.stroke();
             ctx.restore();
           }
@@ -133,5 +151,70 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     animate();
+
+    // Interactive chart tooltips
+    document.querySelectorAll('.bar').forEach((bar, index) => {
+      const value = bar.getAttribute('data-value');
+      bar.style.setProperty('--final-height', value + '%');
+      
+      bar.addEventListener('mouseenter', (e) => {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'chart-tooltip';
+        tooltip.style.cssText = `
+          position: absolute;
+          background: rgba(0,0,0,0.8);
+          color: white;
+          padding: 8px 12px;
+          border-radius: 6px;
+          font-size: 12px;
+          bottom: 110%;
+          left: 50%;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          z-index: 1000;
+          pointer-events: none;
+        `;
+        tooltip.textContent = `Revenue: ${value}K`;
+        bar.style.position = 'relative';
+        bar.appendChild(tooltip);
+      });
+
+      bar.addEventListener('mouseleave', () => {
+        const tooltip = bar.querySelector('.chart-tooltip');
+        if (tooltip) tooltip.remove();
+      });
+    });
+
+    // Animate data visualizations on scroll
+    const observerOptions = {
+      threshold: 0.3
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bars = entry.target.querySelectorAll('.bar');
+          const pieChart = entry.target.querySelector('.pie-chart');
+          const lineChart = entry.target.querySelector('.trend-line');
+          
+          bars.forEach((bar, index) => {
+            setTimeout(() => {
+              bar.style.animation = 'growBar 1s ease-out forwards';
+            }, index * 100);
+          });
+
+          if (pieChart) {
+            pieChart.style.animation = 'rotatePie 2s ease-out';
+          }
+
+          if (lineChart) {
+            lineChart.style.animation = 'drawLine 3s ease-out forwards';
+          }
+        }
+      });
+    }, observerOptions);
+
+    const chartWidgets = document.querySelectorAll('.chart-widget');
+    chartWidgets.forEach(widget => observer.observe(widget));
   }
 });
