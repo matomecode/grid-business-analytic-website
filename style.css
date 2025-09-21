@@ -21,9 +21,10 @@ body {
   height: 100%;
   z-index: -2;
   pointer-events: none;
+  opacity: 0.8;
 }
 
-/* Animated Background - Enhanced Dynamic */
+/* Animated Background - Better Balance */
 .animated-background {
   position: fixed;
   top: 0;
@@ -34,7 +35,7 @@ body {
   background-size: 600% 600%;
   animation: gradientBG 12s ease infinite;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 @keyframes gradientBG {
@@ -202,14 +203,14 @@ body {
 .services-analytics .chart-widget {
   max-width: 200px;
 }
-/* Services Section with 3D Cards */
+/* Services Section with Better 3D Cards */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
   max-width: 1000px;
   margin: 0 auto;
-  perspective: 1200px;
+  perspective: 1000px;
 }
 .card {
   background: rgba(255, 255, 255, 0.2);
@@ -219,10 +220,11 @@ body {
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform-style: preserve-3d;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card::before {
@@ -232,25 +234,30 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(99, 91, 255, 0.1), rgba(130, 104, 255, 0.1));
+  background: linear-gradient(135deg, rgba(99, 91, 255, 0.15), rgba(130, 104, 255, 0.15));
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   border-radius: 15px;
+  z-index: 0;
 }
 
 .card:hover {
-  transform: rotateY(8deg) rotateX(8deg) translateY(-15px) translateZ(20px);
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateY(-20px) scale(1.05);
   box-shadow: 
-    0 25px 50px rgba(31, 38, 135, 0.5),
-    0 0 30px rgba(99, 91, 255, 0.3);
+    0 30px 60px rgba(31, 38, 135, 0.6),
+    0 0 40px rgba(99, 91, 255, 0.4);
 }
 
 .card:hover::before {
   opacity: 1;
 }
 
-.card:nth-child(even):hover {
-  transform: rotateY(-8deg) rotateX(8deg) translateY(-15px) translateZ(20px);
+.card:nth-child(2n):hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) translateY(-20px) scale(1.05);
+}
+
+.card:nth-child(3n):hover {
+  transform: perspective(1000px) rotateX(-10deg) rotateY(10deg) translateY(-20px) scale(1.05);
 }
 
 .card h3 {
@@ -259,13 +266,15 @@ body {
   color: #0a2540;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  font-weight: 600;
 }
 .card p {
   color: #4c5773;
   margin-bottom: 1rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  line-height: 1.6;
 }
 
 /* About Section with Glassmorphism */
@@ -538,6 +547,6 @@ body {
   }
   
   .card:hover {
-    transform: rotateY(4deg) rotateX(4deg) translateY(-10px);
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-15px) scale(1.02);
   }
 }
